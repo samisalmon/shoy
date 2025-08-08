@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shoy - Modern Web Experience" />
+    <title>Shoy</title>
+    <link href="./src/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- preloader start -->
+    <div
+      id="preloader"
+      aria-label="Loading"
+      role="status"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 transition-opacity"
+    >
+      <div class="animate-bounce [animation-duration:1.2s] flex items-end">
+        <div
+          class="w-14 h-14 bg-amber-600 rounded-lg shadow-lg rotate-45"
+        ></div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- header start -->
+    <header class="w-full bg-white/90 shadow-sm fixed top-0 left-0 z-40">
+      <nav
+        class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          class="flex items-center gap-2 font-bold text-xl text-amber-600"
+        >
+          <span
+            class="inline-block w-7 h-7 bg-amber-600 rounded-lg rotate-45 shadow"
+          ></span>
+          Shoy
+        </a>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex gap-8 text-gray-700 font-medium">
+          <li><a href="#home" class="hover:text-amber-600 transition-colors">Home</a></li>
+          <li><a href="#features" class="hover:text-amber-600 transition-colors">Category</a></li>
+          <li><a href="#about" class="hover:text-amber-600 transition-colors">Review</a></li>
+          <li><a href="#contact" class="hover:text-amber-600 transition-colors">Contact</a></li>
+        </ul>
+        <!-- Mobile Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 rounded cursor-pointer" aria-label="Open menu">
+          <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </nav>
+      <!-- Mobile Menu & Overlay -->
+      <div id="mobile-overlay" class="md:hidden fixed inset-0 z-40 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+      <div id="mobile-menu"
+        class="md:hidden fixed inset-y-0 left-0 z-50 flex flex-col items-start pt-16 pl-8 gap-6 text-base font-medium text-white bg-gradient-to-br from-amber-600 via-amber-500 to-amber-700 shadow-2xl transform -translate-x-full opacity-0 pointer-events-none transition-all duration-300"
+        style="width: 70vw; max-width: 280px; min-height: 100vh;"
+        tabindex="-1">
+        <button id="menu-close" class="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-white" aria-label="Close menu">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <a href="#home" class="hover:text-amber-200 transition-colors text-lg font-semibold">Home</a>
+        <a href="#features" class="hover:text-amber-200 transition-colors text-lg font-semibold">Category</a>
+        <a href="#about" class="hover:text-amber-200 transition-colors text-lg font-semibold">Review</a>
+        <a href="#contact" class="hover:text-amber-200 transition-colors text-lg font-semibold">Contact</a>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 min-h-screen flex items-center justify-center" style="background: linear-gradient(135deg, #000000 50%, #2B2B2B 50%);">
+      <div class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Hero Content -->
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                Welcome to 
+                <span class="text-amber-600">Shoy</span>
+              </h1>
+              <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                Discover amazing experiences and create unforgettable moments with our modern platform.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="px-8 py-4 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+                Get Started
+              </button>
+              <button class="px-8 py-4 border-2 border-amber-600 text-amber-600 font-semibold rounded-lg hover:bg-amber-600 hover:text-white transition-colors">
+                Learn More
+              </button>
+            </div>
+            <div class="flex items-center gap-8 text-sm text-gray-400">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Premium Quality</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hero Image -->
+          <div class="relative flex justify-center">
+            <div class="relative z-10 max-w-md">
+              <img 
+                src="./src/img/hero.png" 
+                alt="Shoy Hero Image" 
+                loading="lazy"
+                class="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute -top-4 -right-4 w-16 h-16 bg-amber-600 rounded-full opacity-30"></div>
+            <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-amber-500 rounded-full opacity-30"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Section -->
+    <section id="features" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our <span class="text-amber-600">Products</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Discover our premium collection of high-quality products at competitive prices
+          </p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <!-- Product 1 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s1.jpg" 
+                alt="Product 1" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">New</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Premium Product</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">High-quality premium product with excellent features</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$299</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$399</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s2.jpg" 
+                alt="Product 2" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Sale</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Exclusive Item</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Limited edition exclusive product with unique design</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$199</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$299</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s3.jpg" 
+                alt="Product 3" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Hot</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Trending Now</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Popular trending product with great demand</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$249</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$349</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s4.jpg" 
+                alt="Product 4" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Best</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Best Seller</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Our most popular product with highest ratings</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$179</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$249</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s5.jpg" 
+                alt="Product 5" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">New</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">New Arrival</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Fresh new product just added to our collection</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$329</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$429</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s6.jpg" 
+                alt="Product 6" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Featured Item</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Specially featured product with unique qualities</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$269</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$369</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s7.jpg" 
+                alt="Product 7" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Limited</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Limited Edition</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Exclusive limited edition with unique features</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$399</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$499</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div class="relative">
+              <img 
+                src="./src/img/s8.jpg" 
+                alt="Product 8" 
+                loading="lazy"
+                class="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Offer</span>
+              </div>
+            </div>
+            <div class="p-4 md:p-6">
+              <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Special Offer</h3>
+              <p class="text-gray-600 mb-4 text-sm md:text-base">Special discounted product with great value</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl md:text-2xl font-bold text-amber-600">$149</span>
+                  <span class="text-gray-400 line-through text-sm md:text-base">$249</span>
+                </div>
+                <button class="bg-amber-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg hover:bg-amber-700 transition-colors text-sm">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+    </section>
+
+      <!-- Review Section -->
+      <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Customer <span class="text-amber-600">Reviews</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              See what our satisfied customers have to say about their experience with Shoy
+            </p>
+          </div>
+
+          <!-- Reviews Grid -->
+          <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Review 1 -->
+            <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <img 
+                  src="./src/img/r1.jpg" 
+                  alt="Customer 1" 
+                  loading="lazy"
+                  class="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                  <p class="text-gray-600 text-sm">Verified Customer</p>
+                  <div class="flex items-center mt-1">
+                    <div class="flex text-amber-400">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                "Amazing experience with Shoy! The quality of their products exceeded my expectations. 
+                Fast delivery and excellent customer service. Highly recommended!"
+              </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <img 
+                  src="./src/img/r2.jpg" 
+                  alt="Customer 2" 
+                  loading="lazy"
+                  class="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="font-bold text-gray-900">Emily Chen</h4>
+                  <p class="text-gray-600 text-sm">Verified Customer</p>
+                  <div class="flex items-center mt-1">
+                    <div class="flex text-amber-400">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                "I've been a customer for over a year now and I'm consistently impressed. 
+                The products are top-notch and the prices are competitive. Great value!"
+              </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center mb-6">
+                <img 
+                  src="./src/img/r3.jpg" 
+                  alt="Customer 3" 
+                  loading="lazy"
+                  class="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 class="font-bold text-gray-900">Michael Rodriguez</h4>
+                  <p class="text-gray-600 text-sm">Verified Customer</p>
+                  <div class="flex items-center mt-1">
+                    <div class="flex text-amber-400">
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                      <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                "Outstanding service and quality! The team at Shoy really cares about their customers. 
+                I've recommended them to all my friends and family."
+              </p>
+            </div>
+          </div>
+
+          <!-- Stats Section -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-amber-600 mb-2">10K+</div>
+              <div class="text-gray-600">Happy Customers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-amber-600 mb-2">500+</div>
+              <div class="text-gray-600">Products</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-amber-600 mb-2">4.9</div>
+              <div class="text-gray-600">Average Rating</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-amber-600 mb-2">24/7</div>
+              <div class="text-gray-600">Support</div>
+            </div>
+          </div>
+
+          <!-- Brands Section -->
+          <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-8">Trusted by Leading Brands</h3>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-60">
+              <!-- Brand 1 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">BRAND</span>
+                </div>
+              </div>
+              <!-- Brand 2 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">LOGO</span>
+                </div>
+              </div>
+              <!-- Brand 3 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">TRUST</span>
+                </div>
+              </div>
+              <!-- Brand 4 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">QUALITY</span>
+                </div>
+              </div>
+              <!-- Brand 5 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">PREMIUM</span>
+                </div>
+              </div>
+              <!-- Brand 6 -->
+              <div class="flex items-center justify-center">
+                <div class="w-24 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span class="font-bold text-gray-600">SHOY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+              Get in <span class="text-amber-600">Touch</span>
+            </h2>
+            <p class="text-gray-300 text-lg">
+              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Contact Info 1 -->
+            <div class="text-center">
+              <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2">Phone</h3>
+              <p class="text-gray-300">+1 (555) 123-4567</p>
+              <p class="text-gray-400 text-sm">Mon-Fri 9AM-6PM</p>
+            </div>
+
+            <!-- Contact Info 2 -->
+            <div class="text-center">
+              <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2">Email</h3>
+              <p class="text-gray-300">info@shoy.com</p>
+              <p class="text-gray-400 text-sm">24/7 Support</p>
+            </div>
+
+            <!-- Contact Info 3 -->
+            <div class="text-center">
+              <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-white mb-2">Address</h3>
+              <p class="text-gray-300">123 Business Ave</p>
+              <p class="text-gray-400 text-sm">New York, NY 10001</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-black text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="grid md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div class="md:col-span-2">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="inline-block w-8 h-8 bg-amber-600 rounded-lg rotate-45 shadow"></span>
+                <span class="font-bold text-xl">Shoy</span>
+              </div>
+              <p class="text-gray-400 mb-6 max-w-md">
+                Discover amazing experiences and create unforgettable moments with our modern platform. 
+                We're committed to providing the best quality products and exceptional service.
+              </p>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                  </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                  </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li><a href="#home" class="text-gray-400 hover:text-amber-600 transition-colors">Home</a></li>
+                <li><a href="#features" class="text-gray-400 hover:text-amber-600 transition-colors">Products</a></li>
+                <li><a href="#about" class="text-gray-400 hover:text-amber-600 transition-colors">Reviews</a></li>
+                <li><a href="#contact" class="text-gray-400 hover:text-amber-600 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Support</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">Help Center</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">Terms of Service</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-amber-600 transition-colors">Shipping Info</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400">
+              © 2024 Shoy. All rights reserved. | Designed for amazing experiences
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <script src="./src/script.js" defer></script>
+    </body>
+  </html>
