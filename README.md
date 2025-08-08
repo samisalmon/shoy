@@ -1,4 +1,4 @@
-# Shoy - Modern Web Experience
+# [Shoy](https://samisalmon.github.io/shoy/)
 
 A beautiful, responsive e-commerce website built with HTML, CSS (Tailwind), and JavaScript. Features a modern design with smooth animations, mobile-first approach, and excellent user experience.
 
